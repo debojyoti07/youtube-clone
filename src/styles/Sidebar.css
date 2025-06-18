@@ -1,0 +1,215 @@
+/* Sidebar Base Styling */
+.sidebar {
+  background-color: #181818;
+  width: 240px;
+  height: 100vh;
+  padding: 20px 10px;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: all 0.3s ease;
+  border-right: 1px solid #303030;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+/* General Reset */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar section {
+  margin-bottom: 20px;
+}
+
+.sidebar hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 12px 0;
+}
+
+/* Link Styling */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #2c2c2c;
+  color: #ff0000;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 16px 8px;
+  }
+
+  .sidebar-link {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+  }
+
+  .sidebar-link {
+    padding: 8px 10px;
+  }
+}
+
+/* Section Heading */
+.sidebar section h4 {
+  color: #aaa;
+  margin-bottom: 8px;
+  padding-left: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+/* Hover Transitions */
+.sidebar-link svg {
+  transition: transform 0.3s ease;
+}
+
+.sidebar-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Active Class Option */
+.sidebar-link.active {
+  background-color: #333;
+  color: #ff0000;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar.animate-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Divider Styling */
+.sidebar hr {
+  border: none;
+  height: 1px;
+  background-color: #2c2c2c;
+  margin: 16px 0;
+}
+
+/* Accessibility */
+.sidebar-link:focus {
+  outline: 2px solid #ff0000;
+  outline-offset: 2px;
+}
+
+/* Experimental Hover Layer */
+.sidebar-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.02);
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-link:hover::before {
+  opacity: 1;
+}
+
+/* Icon Color Override */
+.sidebar-link svg {
+  color: #bbb;
+  font-size: 16px;
+}
+
+.sidebar-link:hover svg {
+  color: #ff0000;
+}
+
+/* Optional Animations */
+.sidebar.animate-open {
+  animation: fadeInSidebar 0.4s ease-in-out;
+}
+
+@keyframes fadeInSidebar {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Compact view for small screens */
+@media (max-width: 400px) {
+  .sidebar {
+    font-size: 12px;
+  }
+
+  .sidebar-link {
+    padding: 6px 8px;
+    gap: 8px;
+  }
+}
+
+/* Last section margin */
+.sidebar section:last-child {
+  margin-bottom: 40px;
+}
+
+/* Shadow effect */
+.sidebar {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Z-index fix for overlays */
+.sidebar {
+  z-index: 1001;
+}

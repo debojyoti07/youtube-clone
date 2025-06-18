@@ -1,0 +1,20 @@
+body {
+  background-color: #0f0f0f;
+  color: white;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .video-grid {
+    margin-left: 0;
+  }
+
+  .center input {
+    width: 70%;
+  }
+}

@@ -1,0 +1,162 @@
+/* Full page layout for video grid */
+.home-wrapper {
+  display: flex;
+  background-color: #0f0f0f;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Main video grid area */
+.video-grid {
+  margin-left: 240px;
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Section title */
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 8px;
+  color: #fff;
+  border-left: 4px solid red;
+}
+
+/* Grid layout for each video section */
+.video-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Video Card Styles */
+.video-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.08);
+}
+
+/* Thumbnail container */
+.thumbnail-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 160px;
+  background-color: #333;
+}
+
+.thumbnail-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Video info */
+.video-details {
+  padding: 12px 14px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  color: #e3e3e3;
+}
+
+.uploader {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.video-views {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 1200px) {
+  .video-section-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .video-section-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-section-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+
+  .uploader, .video-views {
+    font-size: 12px;
+  }
+}
+
+/* Animated entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.video-card {
+  animation: fadeInUp 0.3s ease both;
+}
+
+/* Optional subtle gradient background for section */
+.video-section {
+  background: linear-gradient(to bottom, #161616, #0f0f0f);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+

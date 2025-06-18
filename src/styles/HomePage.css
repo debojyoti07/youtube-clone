@@ -1,0 +1,52 @@
+.homepage-container {
+  padding: 40px;
+  color: white;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.homepage-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-info {
+  padding: 12px 16px;
+}
+
+.video-info h4 {
+  margin: 8px 0 4px;
+  font-size: 16px;
+}
+
+.video-info p {
+  font-size: 14px;
+  color: #bbb;
+  margin: 2px 0;
+}
